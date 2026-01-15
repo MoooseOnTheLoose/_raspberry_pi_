@@ -45,7 +45,7 @@ from picamera2 import MappedArray
 # -----------------------------
 # Storage
 # -----------------------------
-MOUNT = "/media/usr/deskView"
+MOUNT = "/media/usr/disk"
 BASE_SUBDIR = "humancam"
 TMP_SUBDIR = "tmp"  # internal temp files (raw h264, concat lists)
 FALLBACK_DIR = "/home/usr/humancam"
