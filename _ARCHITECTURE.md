@@ -63,7 +63,7 @@ AICAM is designed to be:
               ▼
 ┌────────────────────────────┐
 │   State Machine Layer      │
-│  Presence / transitions   │
+│  Presence / transitions    │
 └─────────────┬──────────────┘
               ▼
 ┌────────────────────────────┐
