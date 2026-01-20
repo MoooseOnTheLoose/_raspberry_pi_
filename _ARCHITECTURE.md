@@ -1,4 +1,4 @@
-🧠 **ARCHITECTURE.md — Canonical, Educational Edition**
+🧠 **ARCHITECTURE.md**
 Rasp AI Camera (AICAM / Rasp)
 
 UPDATED:1/20/20206
