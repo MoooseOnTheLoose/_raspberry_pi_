@@ -1,6 +1,6 @@
 # ARCHITECTURE.md
 ## Rasp AI Camera (AICAM / Rasp)
-
+UPDATE: 1/20/2026
 ---
 
 ## 1. Intent and Educational Scope
