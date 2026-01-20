@@ -20,10 +20,6 @@ AICAM is a set of Raspberry Pi camera pipelines designed around a small number o
 - **Event-first** — state transitions are first-class artifacts, not log noise
 - **Deterministic outputs** — version stamps, hashes, and reproducible behavior where applicable
 - **One camera owner at a time** — no parallel Picamera2 / libcamera access
-
-This project is intentionally modular and iterative. Some duplication and variation exists while
-behavior, reliability, and operational boundaries are validated.
-
 ---
 
 ## Project scope
