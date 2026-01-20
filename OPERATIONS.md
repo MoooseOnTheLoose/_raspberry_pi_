@@ -1,6 +1,7 @@
 🛠️ **OPERATIONS.md — Operations Guide**
 Rasp AI Camera (AICAM / Rasp)
 
+UPDATE:1/20/2026
 ---
 
 ## Why This Document Exists
