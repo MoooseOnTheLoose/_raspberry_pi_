@@ -8,7 +8,7 @@ PLANNING:
 3. Consistent directory layout for all artifacts
 4. Systemd units with explicit mount dependencies and sandboxing rules
 
-# _rasp_
+#
 Event-Driven Camera + Offline Vision Pipelines + Hardening
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2dc64401-6ed9-49e3-bba4-9d7519e9a8c7" />
