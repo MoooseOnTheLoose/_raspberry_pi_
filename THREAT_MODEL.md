@@ -1,11 +1,61 @@
 🎯 **THREAT_MODEL.md — Threat Model**
 Rasp AI Camera (AICAM / Rasp)
 
-UPDATE:1/20/2026
+UPDATE:1/21/2026
 ---
 
-## Why This Document Exists
+## Attack Surfaces
+### Physical
 
+- USB storage removal
+- Power cycling
+- Direct console access
+
+**Residual Risk**
+- Hardware tampering is possible but out of scope
+
+---
+
+### Software
+
+- Camera capture scripts
+- Shell environment
+- Python helpers
+
+**Mitigations**
+- Minimal code paths
+- AppArmor confinement
+- Fail-fast execution
+
+---
+
+### Network
+
+- Any enabled interface
+- Outbound connections
+
+**Mitigations**
+- UFW default deny
+- Explicit allow rules only
+
+---
+
+## Python Execution Surface
+In addition to shell-based operation, the system may be operated via Python scripts.
+Python execution is constrained to local use within a dedicated virtual environment
+(venv). The interpreter, standard library, and installed dependencies are considered
+part of the trusted computing base.
+
+The threat model assumes:
+- No implicit or automatic network access by Python code
+- Dependencies are installed intentionally and verified by the operator
+- Python is used only to orchestrate capture, validation, and storage operations,
+  not to expand system connectivity or exposure
+
+This subsection acknowledges Python as an execution surface without expanding the
+system’s threat assumptions beyond existing local code execution risks.
+
+## Why This Document Exists
 This document makes explicit the **threat assumptions already embedded** in the architecture and operations.
 
 Threat modeling here serves three purposes:
@@ -19,7 +69,6 @@ This is **bounded realism**.
 ---
 
 ## Methodology
-
 This threat model loosely follows **STRIDE-style thinking**, but is adapted for a **single-purpose, embedded, offline-first system**.
 
 We model:
@@ -32,7 +81,6 @@ We model:
 ---
 
 ## Assets (What We Are Protecting)
-
 ### Primary Assets (High Value)
 
 1. **Captured Images and Videos**
@@ -62,7 +110,6 @@ We model:
 ---
 
 ## Adversary Classes
-
 ### 1. Opportunistic Thief
 
 **Capabilities**
@@ -132,45 +179,7 @@ We model:
 
 ---
 
-## Attack Surfaces
-
-### Physical
-
-- USB storage removal
-- Power cycling
-- Direct console access
-
-**Residual Risk**
-- Hardware tampering is possible but out of scope
-
----
-
-### Software
-
-- Camera capture scripts
-- Shell environment
-- Python helpers
-
-**Mitigations**
-- Minimal code paths
-- AppArmor confinement
-- Fail-fast execution
-
----
-
-### Network
-
-- Any enabled interface
-- Outbound connections
-
-**Mitigations**
-- UFW default deny
-- Explicit allow rules only
-
----
-
 ## STRIDE Mapping (Simplified)
-
 | Category | Relevant | Notes |
 |-------|----------|------|
 | Spoofing | Low | No identity-based services |
@@ -183,7 +192,6 @@ We model:
 ---
 
 ## In-Scope Threats
-
 ✔ Disk theft  
 ✔ Accidental misoperation  
 ✔ Network exposure  
@@ -193,7 +201,6 @@ We model:
 ---
 
 ## Explicitly Out-of-Scope Threats
-
 ❌ Hardware implants  
 ❌ Side-channel attacks  
 ❌ Nation-state adversaries  
@@ -205,7 +212,6 @@ These require fundamentally different architectures.
 ---
 
 ## Residual Risk (Accepted)
-
 - Data loss due to operator error
 - Device destruction
 - Power loss during capture
@@ -215,7 +221,6 @@ These risks are accepted in favor of simplicity and clarity.
 ---
 
 ## Security Posture Summary
-
 This system prioritizes:
 1. Confidentiality
 2. Predictability
@@ -229,7 +234,6 @@ Over:
 ---
 
 ## When to Update This File
-
 Update THREAT_MODEL.md if:
 - New network capabilities are added
 - Automation is introduced
@@ -241,5 +245,7 @@ If the threat model is outdated, **the security claims are invalid**.
 ---
 
 ## Final Principle
-
 > **If a threat is not written here, it is either mitigated elsewhere or intentionally ignored.**
+>
+![image](https://github.com/user-attachments/assets/425668f0-dd15-4507-92a7-9cf54072e6a2)
+
