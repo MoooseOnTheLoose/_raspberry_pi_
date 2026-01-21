@@ -239,3 +239,5 @@ When policy decisions are finalized, the following will be addressed:
 2. Unified logging configuration (paths, rotation, verbosity)
 3. Consistent directory layout for all artifacts
 4. Systemd units with explicit mount dependencies and sandboxing rules
+
+![image](https://github.com/user-attachments/assets/9ef4be54-b71c-484d-ad57-470a61a71cb3)
