@@ -1,6 +1,6 @@
 # AICAM (Raspberry Pi) 
 
-UPDATED: 1/20/2026
+UPDATED: 1/21/2026
 
 PLANNING: 
 1. Single authoritative storage path selection logic
@@ -238,6 +238,13 @@ When policy decisions are finalized, the following will be addressed:
 1. Single authoritative storage path selection logic
 2. Unified logging configuration (paths, rotation, verbosity)
 3. Consistent directory layout for all artifacts
-4. Systemd units with explicit mount dependencies and sandboxing rules
+4. Systemd units with explicit mount dependencies and sandboxing. 
 
-![image](https://github.com/user-attachments/assets/9ef4be54-b71c-484d-ad57-470a61a71cb3)
+## Python Support
+
+In addition to shell-based operation, this project supports Python-based workflows.
+Python usage is intended to run inside an isolated virtual environment (venv) to
+preserve dependency integrity and reduce host impact. Operational details, including
+example commands and environment setup, are documented in `OPERATIONS.md`.
+
+Refer to **OPERATIONS.md** for authoritative, step-by-step execution guidance.
