@@ -250,8 +250,11 @@ example commands and environment setup, are documented in `OPERATIONS.md`.
 
 Refer to **OPERATIONS.md** for authoritative, step-by-step execution guidance.
 
-![image](https://github.com/user-attachments/assets/991a7fa5-e4e0-4704-bc8f-f65678e4d3d4)
+![image](https://github.com/user-attachments/assets/dcc26235-be04-41bb-84ae-3902600018cd)
 
-![image](https://github.com/user-attachments/assets/4c91f171-f1dc-4c05-b7f6-85902ee49b8b)
+![image](https://github.com/user-attachments/assets/dd06c316-92c9-4763-a803-1f25bb807076)
+
+![image](https://github.com/user-attachments/assets/83722bc1-a42e-421e-8219-298f9070ada2)
+
 
 
