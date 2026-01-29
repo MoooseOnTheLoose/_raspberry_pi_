@@ -13,7 +13,7 @@ def rpiCAMStill():
     session_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(IMAGE_DIR, exist_ok=True)
     os.makedirs(FALLBACK_DIR, exist_ok=True)
-    out_dir = IMAGE_DIR if os.path.ismount("/media/user/disk") else FALLBACK_DIR
+    out_dir = IMAGE_DIR if os.path.ismount("/media/user/disk") else FALLBACK_DIR #confirm location
     output_file = f"{out_dir}/image_{session_ts}.jpg"
     with open(LOG_FILE, "ab", buffering=0) as log:
         log.write(f"\n=== Still Capture Started: {session_ts} ===\n".encode())
@@ -30,7 +30,7 @@ def rpiCAMStill():
             check=True,
             )
         except KeyboardInterrupt:
-            log.write(b"=== Recording interrupted bu user (Ctrl+C) ===\n")
+            log.write(b"=== Recording interrupted by user (Ctrl+C) ===\n")
             raise
         finally:
             end_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
