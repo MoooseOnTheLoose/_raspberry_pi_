@@ -11,7 +11,7 @@ def rpiVIDTest():
     session_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     os.makedirs(VIDEO_DIR, exist_ok=True)
     os.makedirs(FALLBACK_DIR, exist_ok=True)
-    out_dir = VIDEO_DIR if os.path.ismount("/media/user/disk") else FALLBACK_DIR
+    out_dir = VIDEO_DIR if os.path.ismount("/media/user/disk") else FALLBACK_DIR # Confirm location
     out_file = f"{out_dir}/videos_{session_ts}.mp4"
     cmd = [
         "rpicam-vid",
@@ -26,7 +26,7 @@ def rpiVIDTest():
         try:
             subprocess.run(cmd, stdout=log,stderr=log, check=True)
         except KeyboardInterrupt:
-            log.write(b"=== Recording interrupted bu user (Ctrl+C) ===\n")
+            log.write(b"=== Recording interrupted by user (Ctrl+C) ===\n")
             raise
         finally:
             end_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
